@@ -67,7 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     var articles = snapshot.data?.articles ?? [];
 
                     return Expanded(
-                      child: ListView.builder(
+                      child: ListView.separated(
+                        separatorBuilder: (context, index) => SizedBox(
+                          height: 15,
+                        ),
                         itemBuilder: (context, index) {
                           return Text(articles[index].title ?? "");
                         },
